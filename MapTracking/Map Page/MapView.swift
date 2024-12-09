@@ -68,6 +68,10 @@ struct MapView: View {
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
+        .onAppear() {
+            segment = []
+            route = []
+        }
     }
     
     

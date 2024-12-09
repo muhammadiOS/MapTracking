@@ -33,6 +33,9 @@ struct HistoryView: View {
         let descriptor = FetchDescriptor<Route>(predicate: routePredicate)
 
         routes = (try? context.fetch(descriptor)) ?? []
+        routes.sort { r1, r2 in
+            r1.date < r2.date
+        }
     }
 }
 

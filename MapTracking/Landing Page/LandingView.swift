@@ -12,29 +12,36 @@ struct LandingView: View {
     var body: some View {
         NavigationStack {
             
-            VStack(alignment: .center,
-                   spacing: 80) {
-                Button("Map") {
-                    viewModel.isMapViewPresented = true
+            ZStack {
+                Image("wallPapre", bundle: nil)
+                    .resizable()
+                    .scaledToFill()
+                VStack(alignment: .center,
+                       spacing: 80) {
+                    Button("Map") {
+                        viewModel.isMapViewPresented = true
+                    }
+                    .frame(width: 200, height: 40)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .background(.gray)
+                    .cornerRadius(10)
+                    .navigationDestination(isPresented: $viewModel.isMapViewPresented) {
+                        MapView()}
+                    Button("History") {
+                        viewModel.isHistoryViewPresented = true
+                    }
+                    .frame(width: 200, height: 40)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .background(.gray)
+                    .cornerRadius(10)
+                    .navigationDestination(isPresented: $viewModel.isHistoryViewPresented) {
+                        HistoryView()}
                 }
-                .frame(width: 200, height: 40)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .background(.gray)
-                .cornerRadius(10)
-                .navigationDestination(isPresented: $viewModel.isMapViewPresented) {
-                    MapView()}
-                Button("History") {
-                    viewModel.isHistoryViewPresented = true
-                }
-                .frame(width: 200, height: 40)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .background(.gray)
-                .cornerRadius(10)
-                .navigationDestination(isPresented: $viewModel.isHistoryViewPresented) {
-                    HistoryView()}
             }
+            
+            
         }
     }
 }
