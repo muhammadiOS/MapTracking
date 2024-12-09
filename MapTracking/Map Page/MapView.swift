@@ -123,23 +123,36 @@ extension MapView { // for draw
             Button("Start Tracking") {
                 trackingStatus = .start
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
+            .frame(width: 200, height: 40)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .background(.gray)
+            .cornerRadius(10)
+           
             Button("Pause Tracking") {
                 trackingStatus = .pause
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
+            .frame(width: 200, height: 40)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .background(.gray)
+            .cornerRadius(10)
             Button("Resume Tracking") {
                 trackingStatus = .resume
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
+            .frame(width: 200, height: 40)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .background(.gray)
+            .cornerRadius(10)
             Button("Stop Tracking") {
                 trackingStatus = .finished
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.gray)
+            .frame(width: 200, height: 40)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .background(.gray)
+            .cornerRadius(10)
         }
     }
 }
